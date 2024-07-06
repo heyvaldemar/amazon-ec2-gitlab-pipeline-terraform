@@ -196,9 +196,9 @@ variable "rds_db_instance_1_max_allocated_storage" {
 }
 
 variable "rds_storage_type" {
-  description = "The type of storage to use for the RDS instance (e.g., 'gp2', 'io1', or 'standard')"
+  description = "The type of storage to use for the RDS instance (e.g. gp2, gp3, io1, st1, sc1)"
   type        = string
-  default     = "gp2"
+  default     = "gp3"
 }
 
 variable "rds_storage_encrypted" {
@@ -339,9 +339,9 @@ variable "ec2_root_volume_1_size_gb" {
 }
 
 variable "ec2_root_volume_1_type" {
-  description = "The type of the root volume for the EC2 instance (e.g. gp2, io1, st1, sc1)"
+  description = "The type of the root volume for the EC2 instance (e.g. gp2, gp3, io1, st1, sc1)"
   type        = string
-  default     = "gp2"
+  default     = "gp3"
 }
 
 variable "ec2_root_volume_1_encryption" {
@@ -411,9 +411,9 @@ variable "ebs_volume_1_size_gb" {
 }
 
 variable "ebs_volume_1_type" {
-  description = "The type of the extra EBS volume for the EC2 instance (e.g. gp2, io1, st1, sc1)"
+  description = "The type of the extra EBS volume for the EC2 instance (e.g. gp2, gp3, io1, st1, sc1)"
   type        = string
-  default     = "gp2"
+  default     = "gp3"
 }
 
 variable "ebs_volume_1_encryption" {
@@ -441,9 +441,9 @@ variable "backup_ebs_volume_1_size_gb" {
 }
 
 variable "backup_ebs_volume_1_type" {
-  description = "The type of the extra EBS volume for the EC2 instance (e.g. gp2, io1, st1, sc1)"
+  description = "The type of the extra EBS volume for the EC2 instance (e.g. gp2, gp3, io1, st1, sc1)"
   type        = string
-  default     = "gp2"
+  default     = "gp3"
 }
 
 variable "backup_ebs_volume_1_encryption" {
