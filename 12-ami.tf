@@ -1,4 +1,4 @@
-# Get AMI ID for Ubuntu Jammy Jellyfish 22.04
+# Get AMI ID for Ubuntu Jammy Jellyfish 24.04
 data "aws_ami" "ubuntu_24_04" {
   most_recent = true
   owners      = ["099720109477"]
