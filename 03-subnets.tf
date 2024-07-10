@@ -6,7 +6,7 @@ resource "aws_subnet" "private_subnet_1a" {
   map_public_ip_on_launch = false
 
   tags = {
-    "Name" = "private-gitlab-1-${var.region}a"
+    Name = "private-gitlab-1-${var.region}a"
   }
 
   depends_on = [aws_vpc.vpc_1]
@@ -20,7 +20,7 @@ resource "aws_subnet" "private_subnet_1b" {
   map_public_ip_on_launch = false
 
   tags = {
-    "Name" = "private-gitlab-1-${var.region}b"
+    Name = "private-gitlab-1-${var.region}b"
   }
 
   depends_on = [aws_vpc.vpc_1]
@@ -34,7 +34,7 @@ resource "aws_subnet" "private_subnet_1c" {
   map_public_ip_on_launch = false
 
   tags = {
-    "Name" = "private-gitlab-1-${var.region}c"
+    Name = "private-gitlab-1-${var.region}c"
   }
 
   depends_on = [aws_vpc.vpc_1]
@@ -49,7 +49,7 @@ resource "aws_subnet" "public_subnet_1a" {
   map_public_ip_on_launch = true
 
   tags = {
-    "Name" = "public-gitlab-1-${var.region}a"
+    Name = "public-gitlab-1-${var.region}a"
   }
 
   depends_on = [aws_vpc.vpc_1]
@@ -64,7 +64,7 @@ resource "aws_subnet" "public_subnet_1b" {
   map_public_ip_on_launch = true
 
   tags = {
-    "Name" = "public-gitlab-1-${var.region}b"
+    Name = "public-gitlab-1-${var.region}b"
   }
 
   depends_on = [aws_vpc.vpc_1]

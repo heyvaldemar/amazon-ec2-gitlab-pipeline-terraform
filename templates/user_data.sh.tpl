@@ -82,7 +82,7 @@ curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scrip
 # The external URL is used by GitLab for various features such as links in emails.
 sudo EXTERNAL_URL="${gitlab_external_url_install}" apt install -y gitlab-ce
 
-# Use the -f option with apt-get install to attempt to correct a system with broken dependencies in place. 
+# Use the -f option with apt-get install to attempt to correct a system with broken dependencies in place.
 # This option, when used with install/remove, can omit any packages to permit APT to deduce a likely solution.
 sudo apt-get install -f
 

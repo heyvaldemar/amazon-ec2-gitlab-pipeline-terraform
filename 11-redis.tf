@@ -15,8 +15,8 @@ resource "aws_elasticache_cluster" "redis_1" {
 }
 
 resource "aws_elasticache_parameter_group" "elasticache_parameter_group_1" {
-  name        = "elasticache-parameter-group-1"
-  family      = var.redis_parameter_group_name
+  name   = "elasticache-parameter-group-1"
+  family = var.redis_parameter_group_name
 
   parameter {
     name  = "cluster-enabled"

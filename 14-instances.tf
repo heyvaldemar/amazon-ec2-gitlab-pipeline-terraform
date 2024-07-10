@@ -22,7 +22,7 @@ locals {
 
 # EC2 Instance creation
 resource "aws_instance" "instance_1" {
-  ami                    = data.aws_ami.ubuntu_22_04.id
+  ami                    = data.aws_ami.ubuntu_24_04.id
   availability_zone      = var.ec2_availability_zone
   subnet_id              = aws_subnet.private_subnet_1a.id
   instance_type          = var.ec2_instance_1_type
