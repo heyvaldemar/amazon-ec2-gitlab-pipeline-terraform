@@ -60,6 +60,10 @@ resource "aws_instance" "instance_1" {
     gitlab_mail_domain_install             = var.gitlab_mail_domain
   })
 
+  lifecycle {
+    ignore_changes = [user_data]
+  }
+
   tags = {
     Name = "gitlab-1"
   }
