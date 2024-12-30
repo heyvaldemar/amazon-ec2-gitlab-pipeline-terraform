@@ -363,16 +363,6 @@ Let’s do this together!
 🪙 **Binance Coin (BNB):** bnb1xnn6gg63lr2dgufngfr0lkq39kz8qltjt2v2g6\
 💠 **Litecoin (LTC):** LMGrhx8Jsx73h1pWY9FE8GB46nBytjvz8g
 
-## Disclaimer
-
-This repository contains a Docker Compose configuration that references third-party Docker images. **I am not the creator or maintainer of these images** and have no control over their content. By using this configuration, you acknowledge that:
-
-1. **You are solely responsible** for verifying the contents, licensing, and legality of any third-party Docker images referenced in this repository.
-2. This configuration does **not include any ROM, BIOS, or other copyrighted files**. You are responsible for ensuring that any files you use comply with applicable licensing and copyright laws.
-3. **No liability** is assumed for any legal issues or damages that arise from the use or misuse of this configuration and the images it references.
-
-Please review all relevant licensing terms and only proceed if you have the legal right to use all components.
-
 <div align="center">
 
 ### Show some 💜 by starring some of the [repositories](https://github.com/heyValdemar?tab=repositories)!
