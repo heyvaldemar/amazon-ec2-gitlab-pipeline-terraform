@@ -507,7 +507,7 @@ variable "gitlab_external_url" {
 variable "gitlab_ssh_endpoint" {
   description = "This variable represents the SSH endpoint for cloning repositories from a GitLab instance"
   type        = string
-  default     = "psgl-ssh.heyvaldemar.net"
+  default     = "gitlab-ssh.heyvaldemar.net"
 }
 
 variable "gitlab_mail_domain" {
