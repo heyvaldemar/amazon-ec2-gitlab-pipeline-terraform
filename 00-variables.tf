@@ -94,14 +94,14 @@ variable "subnet_group_2_name" {
 variable "route53_zone_1_name" {
   description = "Domain name for the ACM certificate"
   type        = string
-  default     = "heyvaldemar.net"
+  default     = "example.com"
 }
 
 # AWS Certificate Manager Variables
 variable "acm_1_certificate_1_domain_name" {
   description = "Domain name for the ACM certificate"
   type        = string
-  default     = "gitlab.heyvaldemar.net"
+  default     = "gitlab.example.com"
 }
 
 # RDS Variables
@@ -501,31 +501,31 @@ variable "dynamodb_terraform_state_lock_1_billing_mode" {
 variable "gitlab_external_url" {
   description = "URL on which GitLab will be reachable"
   type        = string
-  default     = "https://gitlab.heyvaldemar.net"
+  default     = "https://gitlab.example.com"
 }
 
 variable "gitlab_ssh_endpoint" {
   description = "This variable represents the SSH endpoint for cloning repositories from a GitLab instance"
   type        = string
-  default     = "gitlab-ssh.heyvaldemar.net"
+  default     = "gitlab-ssh.example.com"
 }
 
 variable "gitlab_mail_domain" {
   description = "The domain used for the mail system in the GitLab setup. This will be used in the configuration of the postfix system for sending emails"
   type        = string
-  default     = "heyvaldemar.net"
+  default     = "example.com"
 }
 
 variable "gitlab_reply_from" {
   description = "The email address that will appear in the 'From' field of the emails sent by GitLab"
   type        = string
-  default     = "gitlab@heyvaldemar.net"
+  default     = "gitlab@example.com"
 }
 
 variable "gitlab_reply_to" {
   description = "The email address that will receive any replies to the emails sent by GitLab"
   type        = string
-  default     = "gitlab@heyvaldemar.net"
+  default     = "gitlab@example.com"
 }
 
 variable "gitlab_backup_ebs_volume_1_mount_point" {
