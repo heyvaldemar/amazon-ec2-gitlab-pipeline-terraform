@@ -1,6 +1,7 @@
 # GitLab on Amazon EC2: Terraform
 
 [![Terraform Verification](https://github.com/heyvaldemar/amazon-ec2-gitlab-pipeline-terraform/actions/workflows/terraform-verification.yml/badge.svg?branch=main)](https://github.com/heyvaldemar/amazon-ec2-gitlab-pipeline-terraform/actions/workflows/terraform-verification.yml)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/14907/badge)](https://www.bestpractices.dev/projects/14907)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository deploys a self-managed GitLab on EC2 with RDS PostgreSQL, ElastiCache Redis, an NLB for SSH and an ALB with an ACM certificate for HTTPS, DNS in Route 53, and a self-provisioned Terraform state backend (S3 + DynamoDB + KMS). Flat, numbered `.tf` files, no modules to chase, every provider locked to an exact build.
