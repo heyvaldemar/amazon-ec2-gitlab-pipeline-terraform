@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-_(no unreleased changes yet)_
+### Added
+
+- **A test of what the configuration promises, and proof that the test can fail.** `tests/posture.tftest.hcl` plans the configuration with its default variables against mocked providers and makes 32 assertions about what it would build; `tests/plant_violations.py` breaks them 18 ways on a copy and requires the test to notice each. Both run in CI on every push. The README's Testing section also lists, plainly, what the defaults do not promise.
+
+### Changed
+
+- **The HTTPS listener negotiates TLS 1.3.** `ssl_policy` moved from `ELBSecurityPolicy-TLS-1-2-2017-01` to `ELBSecurityPolicy-TLS13-1-2-2021-06`, AWS's recommended policy, which keeps TLS 1.2 for older clients and drops the CBC suites. The posture test asserts it.
 
 ## [1.1.5] - 2026-09-26
 
