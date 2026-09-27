@@ -128,8 +128,8 @@ run "the_defaults_are_the_secure_ones" {
   }
 
   assert {
-    condition     = strcontains(aws_lb_listener.alb_1_https_listener_1.ssl_policy, "TLS13")
-    error_message = "alb_1_https_listener_1 accepts a policy without TLS 1.3"
+    condition     = strcontains(aws_lb_listener.alb_1_https_listener_1.ssl_policy, "TLS13") && strcontains(aws_lb_listener.alb_1_https_listener_1.ssl_policy, "-PQ-")
+    error_message = "alb_1_https_listener_1 accepts a policy without TLS 1.3 or without post-quantum key exchange"
   }
 
   assert {

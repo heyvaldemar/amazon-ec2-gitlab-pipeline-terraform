@@ -7,7 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-_(no unreleased changes yet)_
+### Changed
+
+- **The HTTPS listener uses the policy AWS recommends,
+  `ELBSecurityPolicy-TLS13-1-2-Res-PQ-2025-09`.** v1.2.0 moved it to
+  `ELBSecurityPolicy-TLS13-1-2-2021-06` and called that AWS's recommended
+  policy. It was not: [AWS's page on ALB security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html),
+  read on 27 September 2026, recommends the post-quantum policy. It uses a
+  hybrid post-quantum key exchange where the client supports one, TLS 1.3,
+  and TLS 1.2 restricted to ECDHE with AES-GCM. A client that can only offer
+  TLS 1.2 with CBC or non-ECDHE ciphers can no longer connect; current
+  browsers and git clients can. The posture test now asserts TLS 1.3 and
+  post-quantum key exchange, and two planted policies show it failing.
 
 ## [1.2.0] - 2026-09-26
 
