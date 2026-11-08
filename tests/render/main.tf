@@ -3,6 +3,10 @@
 # The configuration renders it with timestamp(), which makes it unknown until
 # apply; this renders the same template with every value known at plan.
 
+terraform {
+  required_version = ">= 1.9.2, < 2.0.0"
+}
+
 variable "password" {
   description = "A stand-in database password the assertions look for"
   type        = string
