@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+_(no unreleased changes yet)_
+
+## [1.3.7] - 2026-11-08
+
 ### Security
 
 - **The database password is no longer on a command line.** `user_data` created the PostgreSQL extensions with `sudo PGPASSWORD=$DB_PASSWORD psql …`. `sudo` is a program, so the assignment, password included, was in its arguments, readable by every user on the instance with `ps` while the command ran. `user_data` already runs as root, so `sudo` added nothing: `psql` now gets `PGPASSWORD` in its own environment. `tests/posture.tftest.hcl` renders the template with a stand-in password and asserts that no `sudo` line carries `PGPASSWORD=`; a new plant puts the old line back and the test has to notice. Existing instances are not touched (`ignore_changes = [user_data]`); the command ran once, at the first boot.
