@@ -192,3 +192,30 @@ run "the_defaults_are_the_secure_ones" {
     error_message = "redis_security_group_1 opens a port other than 80 and 443 to the internet"
   }
 }
+
+# THE DATABASE PASSWORD ON NO COMMAND LINE. sudo PGPASSWORD=<password> psql put
+# the assignment in sudo's arguments, where every user on the instance reads it
+# with ps. tests/render renders the very template the instance gets, with a
+# stand-in password, because the configuration's own rendering carries
+# timestamp() and is unknown until apply.
+run "the_database_password_is_on_no_command_line" {
+  command = plan
+
+  module {
+    source = "./tests/render"
+  }
+
+  variables {
+    password = "e2e-stand-in-db-password"
+  }
+
+  assert {
+    condition     = length(regexall("sudo[^\n]*PGPASSWORD=", output.user_data)) == 0
+    error_message = "user_data hands the database password to sudo as PGPASSWORD=, in sudo's arguments"
+  }
+
+  assert {
+    condition     = strcontains(output.user_data, "PGPASSWORD=\"$DB_PASSWORD\" /opt/gitlab/embedded/bin/psql")
+    error_message = "psql no longer gets the password from its environment"
+  }
+}

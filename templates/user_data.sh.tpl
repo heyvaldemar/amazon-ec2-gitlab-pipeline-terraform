@@ -164,7 +164,11 @@ sudo chmod -R 644 "${backup_ebs_volume_1_mount_point}/gitlab"
 # Install the required extensions for PostgreSQL
 DB_PASSWORD=${db_password_install}
 RDS_ENDPOINT_NO_PORT=$(echo ${db_host_install} | sed 's/:5432//')
-sudo PGPASSWORD=$DB_PASSWORD /opt/gitlab/embedded/bin/psql -U gitlab -h $RDS_ENDPOINT_NO_PORT -d gitlabhq_production <<EOF
+# The password reaches psql in its environment only. This ran as
+# sudo with the PGPASSWORD assignment as its first argument, and sudo is a program: the assignment was in
+# its arguments, readable by every user on the instance with ps. user_data
+# already runs as root, so sudo added nothing.
+PGPASSWORD="$DB_PASSWORD" /opt/gitlab/embedded/bin/psql -U gitlab -h $RDS_ENDPOINT_NO_PORT -d gitlabhq_production <<EOF
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 CREATE EXTENSION IF NOT EXISTS btree_gist;
 EOF
